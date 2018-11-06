@@ -886,7 +886,7 @@ class OneLogin_Saml2_Utils(object):
 
         signature = Signature(xmlsec.TransformExclC14N, sign_algorithm_transform, nsPrefix='ds')
 
-        issuer = OneLogin_Saml2_Utils.query(elem, '//saml:Issuer')
+        issuer = OneLogin_Saml2_Utils.query(elem, './/saml:Issuer')
         if len(issuer) > 0:
             issuer = issuer[0]
             issuer.addnext(signature)
